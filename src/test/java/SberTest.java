@@ -9,8 +9,8 @@ public class SberTest {
     @Test
     public void openPage() {
 
-        open("https://gitlab.com/rluna-gitlab/gitlab-ce");
-        $(byLinkText("Pricing")).click();
+        open("http://www.sberbank.ru/ru/person");
+        $(byLinkText("Офисы")).click();
     }
 
 }
