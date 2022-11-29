@@ -16,9 +16,19 @@ public class SberTest {
     }
 
     @Test
-    public void searchOffice() {
+    public void searchAtm() {
         open("http://www.sberbank.ru/ru/person");
-        $(byLinkText("Офисы")).click();
+        $(byLinkText("Банкоматы")).click();
+        $(".kitt-input__control").setValue("60032100").pressEnter();
+        $(".moib-card-address__address")
+                .shouldHave(text("г. Вологда, ул. Пошехонское Шоссе, д. 21"));
+    }
+
+    @Test
+    public void searchAnswerInFaq() {
+        open("http://www.sberbank.ru/ru/person");
+        $("#kitt-top-menu-11")
+        $("")
     }
 
 }
