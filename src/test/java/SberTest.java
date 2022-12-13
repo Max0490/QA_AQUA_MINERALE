@@ -53,7 +53,7 @@ public class SberTest {
     public void switchToEnglishVersion() {
         open("http://www.sberbank.ru/ru/person");
         $(byLinkText(".kitt-footer-lang_md")).click();
-        $("#PageTeaserDict_header").shouldHave(text("SberBank today"))
+        $("#PageTeaserDict_header").shouldHave(text("SberBank today"));
     }
 
 }
