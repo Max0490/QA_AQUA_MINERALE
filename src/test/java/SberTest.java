@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -8,6 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class SberTest {
 
 //    @Test
+//    @DisplayName("Открытие главной страницы")
 //    public void openPage() {
 //
 //        open("http://www.sberbank.ru/ru/person");
@@ -15,6 +17,7 @@ public class SberTest {
 //    }
 //
 //    @Test
+//    @DisplayName("Проверка поиска банкомата по номеру")
 //    public void searchAtm() {
 //        open("http://www.sberbank.ru/ru/person");
 //        $(byLinkText("Банкоматы")).click();
@@ -24,6 +27,7 @@ public class SberTest {
 //    }
 //
 //    @Test
+//    @DisplayName("Проверка поиска доп.офиса банка по номеру")
 //    public void searchOffice() {
 //        open("http://www.sberbank.ru/ru/person");
 //        $(byLinkText("Офисы")).click();
@@ -40,6 +44,7 @@ public class SberTest {
 //    }
 
     @Test  //тест поиска вакансии
+    @DisplayName("Проверка поиска вакансии по ключевому слову")
     public void searchVacancy() {
         open("http://www.sberbank.ru/ru/person");
         $(byLinkText("Вакансии")).click();
@@ -50,6 +55,7 @@ public class SberTest {
     }
 
     @Test //проверка локали
+    @DisplayName("Проверка смены языка на сайте")
     public void switchToEnglishVersion() {
         open("http://www.sberbank.ru/ru/person");
         $(byLinkText(".kitt-footer-lang_md")).click();
