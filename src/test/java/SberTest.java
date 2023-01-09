@@ -55,7 +55,7 @@ public class SberTest {
     }
 
     @Test //проверка локали
-    @DisplayName("Проверка смены языка на сайте")
+    @DisplayName("Проверка изменения языка на сайте")
     public void switchToEnglishVersion() {
         open("http://www.sberbank.ru/ru/person");
         $(byLinkText(".kitt-footer-lang_md")).click();
