@@ -1,3 +1,5 @@
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -8,18 +10,25 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SberTest {
 
+    @BeforeAll
+    static void setUp() {
+        Configuration.baseUrl = "http://www.sberbank.ru";
+        Configuration.holdBrowserOpen = true;
+        Configuration.browserSize = "1920x1080";
+    }
+
 //    @Test
 //    @DisplayName("Открытие главной страницы")
 //    public void openPage() {
 //
-//        open("http://www.sberbank.ru/ru/person");
+//        open("/ru/person");
 //        $(".kitt-header__sbol").shouldHave(text("СберБанк Онлайн"));
 //    }
 //
 //    @Test
 //    @DisplayName("Проверка поиска банкомата по номеру")
 //    public void searchAtm() {
-//        open("http://www.sberbank.ru/ru/person");
+//        open("/ru/person");
 //        $(byLinkText("Банкоматы")).click();
 //        $(".kitt-input__control").setValue("60032100").pressEnter();
 //        $(".moib-card-address__address")
@@ -29,7 +38,7 @@ public class SberTest {
 //    @Test
 //    @DisplayName("Проверка поиска доп.офиса банка по номеру")
 //    public void searchOffice() {
-//        open("http://www.sberbank.ru/ru/person");
+//        open("/ru/person");
 //        $(byLinkText("Офисы")).click();
 //        $(".kitt-input__control").setValue("6991/0146").pressEnter();
 //        $(".moib-card-address__address")
@@ -38,7 +47,7 @@ public class SberTest {
 //
 //    @Test //тест поиска вопроса-ответа в FAQ
 //    public void searchAnswerInFaq() {
-//        open("http://www.sberbank.ru/ru/person");
+//        open("/ru/person");
 //        $("#kitt-top-menu-11")
 //        $("")
 //    }
@@ -46,7 +55,7 @@ public class SberTest {
     @Test  //тест поиска вакансии
     @DisplayName("Проверка поиска вакансии по ключевому слову")
     public void searchVacancy() {
-        open("http://www.sberbank.ru/ru/person");
+        open("/ru/person");
         $(byLinkText("Вакансии")).click();
         $(byText("Профессия, навык или сфера"))
                 .setValue("Java").pressEnter();
@@ -57,7 +66,7 @@ public class SberTest {
     @Test //проверка локали
     @DisplayName("Проверка изменения языка на сайте")
     public void switchToEnglishVersion() {
-        open("http://www.sberbank.ru/ru/person");
+        open("/ru/person");
         $(byLinkText(".kitt-footer-lang_md")).click();
         $("#PageTeaserDict_header").shouldHave(text("SberBank today"));
     }
